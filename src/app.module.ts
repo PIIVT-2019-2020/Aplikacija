@@ -25,6 +25,8 @@ import { PhotoService } from './services/photo/photo.service';
 import { FeatureService } from './services/feature/feature.service';
 import { ApiFeatureController } from './controllers/api.feature.controller';
 import { UserService } from './services/user/user.service';
+import { CartService } from './services/cart/cart.service';
+import { ApiUserCartController } from './controllers/api.user.cart.controller';
 
 @Module({
   imports: [
@@ -70,6 +72,7 @@ import { UserService } from './services/user/user.service';
     ApiArticleController,
     AuthController,
     ApiFeatureController,
+    ApiUserCartController,
   ],
   providers: [
     AdministratorService,
@@ -78,6 +81,7 @@ import { UserService } from './services/user/user.service';
     PhotoService,
     FeatureService,
     UserService,
+    CartService,
   ],
 })
 export class AppModule implements NestModule {
