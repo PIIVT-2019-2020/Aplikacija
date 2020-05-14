@@ -99,6 +99,10 @@ CREATE TABLE IF NOT EXISTS `cart` (
 
 DELETE FROM `cart`;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` (`cart_id`, `user_id`, `created_at`) VALUES
+	(1, 1, '2020-05-14 14:19:05'),
+	(2, 1, '2020-05-14 14:19:35'),
+	(3, 1, '2020-05-14 14:21:28');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `cart_article`;
@@ -116,6 +120,8 @@ CREATE TABLE IF NOT EXISTS `cart_article` (
 
 DELETE FROM `cart_article`;
 /*!40000 ALTER TABLE `cart_article` DISABLE KEYS */;
+INSERT INTO `cart_article` (`cart_article_id`, `cart_id`, `article_id`, `quantity`) VALUES
+	(1, 2, 1, 5);
 /*!40000 ALTER TABLE `cart_article` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `category`;
@@ -175,6 +181,9 @@ CREATE TABLE IF NOT EXISTS `order` (
 
 DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` (`order_id`, `created_at`, `cart_id`, `status`) VALUES
+	(1, '2020-05-14 14:19:27', 1, 'pending'),
+	(2, '2020-05-14 14:21:23', 2, 'pending');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `photo`;
@@ -213,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `email`, `password_hash`, `forename`, `surname`, `phone_number`, `postal_address`) VALUES
-	(1, 'pperic@test.rs', '3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2', 'Pera', 'Peric', '+3816077777787', 'Nepoznata adresa bb, Beograd, Srbija');
+	(1, 'pperic@test.rs', 'DDAF35A193617ABACC417349AE20413112E6FA4E89A97EA20A9EEEE64B55D39A2192992A274FC1A836BA3C23A3FEEBBD454D4423643CE80E2A9AC94FA54CA49F', 'Pera', 'Peric', '+3816077777787', 'Nepoznata adresa bb, Beograd, Srbija');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

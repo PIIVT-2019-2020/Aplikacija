@@ -40,6 +40,40 @@
 			"response": []
 		},
 		{
+			"name": "User login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"pperic@test.rs\",\n\t\"password\": \"abc\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/user/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get All Administrators",
 			"request": {
 				"method": "GET",
@@ -342,6 +376,121 @@
 						"api",
 						"category",
 						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get active cart for user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWRlbnRpdHkiOiJwcGVyaWNAdGVzdC5ycyIsImV4cCI6MTU5MDY2ODMxOC42NjksImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI0LjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTU4OTQ1ODcxOH0.nPDo9poUnD4vpW8X54QFOn2SePSwZece6vPg3ar16hU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user/cart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"cart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add article to actve cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWRlbnRpdHkiOiJwcGVyaWNAdGVzdC5ycyIsImV4cCI6MTU5MDY2ODMxOC42NjksImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI0LjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTU4OTQ1ODcxOH0.nPDo9poUnD4vpW8X54QFOn2SePSwZece6vPg3ar16hU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"articleId\": 1,\n\t\"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/cart/addToCart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"cart",
+						"addToCart",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change article quantity in actve cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWRlbnRpdHkiOiJwcGVyaWNAdGVzdC5ycyIsImV4cCI6MTU5MDY2ODMxOC42NjksImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI0LjEiLCJyb2xlIjoidXNlciIsImlhdCI6MTU4OTQ1ODcxOH0.nPDo9poUnD4vpW8X54QFOn2SePSwZece6vPg3ar16hU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"articleId\": 1,\n\t\"quantity\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/cart/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"cart",
 						""
 					]
 				}
