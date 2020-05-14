@@ -43,7 +43,7 @@ npm run start:dev
 
 U Internet pregledacu otvoriti: http://localhost:3000/
 
-## Instrukciej za testiranje
+## Instrukcije za testiranje
 
 Instalirajte Postman i uvezite kolekciju iz datoteke .POSTMAN/aplikacija.json
 
